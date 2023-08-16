@@ -2,8 +2,8 @@
 import {
   Subject, SubjectList, ExamAttribute, Setting, Day, loadPage, ClassTimeList
 } from 'https://jaknndiius.github.io/TimeTableAPI/js/timeTableAPI.js';
-// 문학
-const Lit = new SubjectList('문학', ['윤동희', '신치훈', '김병호']);
+// 독서
+const Lit = new SubjectList('독서', ['윤동희', '신치훈', '김병호']);
 Lit.setExam(
   new ExamAttribute(22, 2)
     .addRange('교과서: p114~254')
@@ -11,7 +11,7 @@ Lit.setExam(
 // 인상
 const Human = new Subject('인상', '윤동희');
 // 영어
-const Eng = new SubjectList('영어', ['장인석', '이성훈', '장인석']);
+const Eng = new SubjectList('영어', ['정화선', '이성훈', '정화선']);
 Eng.setExam(
   new ExamAttribute(24,4)
     .addRange('교과서: lesson 4,5, special')
@@ -21,7 +21,7 @@ Eng.setExam(
     .addRange('6월 학평: 18~45번(서술형 제외)')
 );
 // 수학
-const Mathmatics = new SubjectList('수학', ['노현태', '박진우', '박진우']);
+const Mathmatics = new SubjectList('수학', ['박복음', '박선주', '박선주']);
 Mathmatics[1].setExam(
   new ExamAttribute(16, 4)
     .addRange('교과서: p86~153')
@@ -33,13 +33,13 @@ Mathmatics[2].setExam(
     .addRange('학습지: 100문제(51번 제외)')
 );
 //탐구
-const Physics = new Subject('물리', '황준식');
+const Physics = new Subject('화학', '이승현');
 Physics.setExam(
   new ExamAttribute(20, 4)
     .addRange('교과서: p94~210')
     .addRange('완자: 교과서 해당 내용까지')
 );
-const EarthScience = new Subject('지학', '정희찬');
+const EarthScience = new Subject('생명', '정소영');
 EarthScience.setExam(
   new ExamAttribute(20, 4)
     .addRange('교과서: p80~143')
@@ -66,7 +66,7 @@ Foregin.setExam(
     .addRange('학습지: 수행평가 문장 30개')
 );
 // 창체
-const Creaty = new Subject('창체', '장인석');
+const Creaty = new Subject('창체', '윤동희');
 // 모의고사
 Setting.addMoakTest('2023/03/23');
 Setting.addMoakTest('2023/06/01');
