@@ -66,7 +66,7 @@ Foregin.setExam(
     .addRange('학습지: 수행평가 문장 30개')
 );
 // 창체
-const Creaty = new Subject('창체', '윤동희');
+const CA = new Subject('창체', '윤동희');
 // 모의고사
 Setting.addMoakTest('2023/03/23');
 Setting.addMoakTest('2023/06/01');
@@ -85,24 +85,24 @@ classTimes.addClassTime(14, 0);
 classTimes.addClassTime(15, 0);
 Setting.setClassTime(classTimes);
 // 정규 시간표
-Setting.group(Eng[1], Mathematics[2], Mathematics[1], Creaty, Eng[2], Reading[2], Biology)
+Setting.group(Eng[1], Mathematics[2], Mathematics[1], CA, Eng[2], Reading[2], Biology)
   .setToRegularSchedule(Day.MONDAY);
 Setting.group(Chemistry, Chemistry, PE, Human, Mathematics[1], Mathematics[2], Art)
   .setToRegularSchedule(Day.THEUSDAY);
-Setting.group(Reading[1], Eng[1], Mathematics[3], Music, Creaty, Creaty, Creaty)
+Setting.group(Reading[1], Eng[1], Mathematics[3], Music, CA, CA, CA)
   .setToRegularSchedule(Day.WEDNESDAY);
 Setting.group(Art, Eng[2], Biology, Biology, Eng[3], Foregin, KHistory)
   .setToRegularSchedule(Day.THURSDAY);
-Setting.group(Mathematics[2], Reading[2], Mathematics[1], Creaty, Chemistry, Reading[1], Reading[3])
+Setting.group(Mathematics[2], Reading[2], Mathematics[1], CA, Chemistry, Reading[1], Reading[3])
   .setToRegularSchedule(Day.FIRDAY);
 // 시험 시간표
-Setting.group(Eng, Physics)
+Setting.group(Eng)
   .setToExamSchedule(7, 3);
-Setting.group(Mathmatics[1], KHistory, EarthScience)
+Setting.group(Mathematics[1], KHistory)
   .setToExamSchedule(7, 4);
 Setting.group(Mathmatics[2], Foregin)
   .setToExamSchedule(7, 5);
-Setting.group(Read)
+Setting.group(Reading)
   .setToExamSchedule(7, 6);
 
 loadPage();
