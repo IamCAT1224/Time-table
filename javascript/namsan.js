@@ -3,8 +3,8 @@ import {
   Subject, SubjectList, ExamAttribute, Setting, Day, loadPage, ClassTimeList
 } from 'https://jaknndiius.github.io/TimeTableAPI/js/timeTableAPI.js';
 // 독서
-const Read = new SubjectList('독서', ['윤동희', '신치훈', '김병호']);
-Read.setExam(
+const Reading = new SubjectList('독서', ['윤동희', '신치훈', '김병호']);
+Reading.setExam(
   new ExamAttribute(22, 2)
     .addRange('교과서: p114~254')
 );
@@ -21,13 +21,13 @@ Eng.setExam(
     .addRange('6월 학평: 18~45번(서술형 제외)')
 );
 // 수학
-const Math = new SubjectList('수학', ['박복음', '박선주', '박선주']);
-Math[1].setExam(
+const Mathematics = new SubjectList('수학', ['박복음', '박선주', '박선주']);
+Mathematics[1].setExam(
   new ExamAttribute(16, 4)
     .addRange('교과서: p86~153')
     .addRange('학습지: 100문제(사인 법칙과 코사인 법칙-수학적 귀납법)')
 );
-Math[2].setExam(
+Mathematics[2].setExam(
   new ExamAttribute(16, 4)
     .addRange('교과서: p72~p155')
     .addRange('학습지: 100문제(51번 제외)')
@@ -85,15 +85,15 @@ classTimes.addClassTime(14, 0);
 classTimes.addClassTime(15, 0);
 Setting.setClassTime(classTimes);
 // 정규 시간표
-Setting.group(Eng[1], Math[2], Math[1], Creaty, Eng[2], Read[2], Biology)
+Setting.group(Eng[1], Mathematics[2], Mathematics[1], Creaty, Eng[2], Reading[2], Biology)
   .setToRegularSchedule(Day.MONDAY);
-Setting.group(Chemistry, Chemistry, PE, Human, Math[1], Math[2], Art)
+Setting.group(Chemistry, Chemistry, PE, Human, Mathematics[1], Mathematics[2], Art)
   .setToRegularSchedule(Day.THEUSDAY);
-Setting.group(Read[1], Eng[1], Math[3], Music, Creaty, Creaty, Creaty)
+Setting.group(Reading[1], Eng[1], Mathematics[3], Music, Creaty, Creaty, Creaty)
   .setToRegularSchedule(Day.WEDNESDAY);
 Setting.group(Art, Eng[2], Biology, Biology, Eng[3], Foregin, KHistory)
   .setToRegularSchedule(Day.THURSDAY);
-Setting.group(Math[2], Read[2], Math[1], Creaty, Chemistry, Read[1], Read[3])
+Setting.group(Mathematics[2], Reading[2], Mathematics[1], Creaty, Chemistry, Reading[1], Reading[3])
   .setToRegularSchedule(Day.FIRDAY);
 // 시험 시간표
 Setting.group(Eng, Physics)
@@ -102,7 +102,7 @@ Setting.group(Mathmatics[1], KHistory, EarthScience)
   .setToExamSchedule(7, 4);
 Setting.group(Mathmatics[2], Foregin)
   .setToExamSchedule(7, 5);
-Setting.group(Lit)
+Setting.group(Read)
   .setToExamSchedule(7, 6);
 
 loadPage();
