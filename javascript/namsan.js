@@ -3,8 +3,8 @@ import {
   Subject, SubjectList, ExamAttribute, Setting, Day, loadPage, ClassTimeList
 } from 'https://jaknndiius.github.io/TimeTableAPI/js/timeTableAPI.js';
 // 독서
-const Lit = new SubjectList('독서', ['윤동희', '신치훈', '김병호']);
-Lit.setExam(
+const Read = new SubjectList('독서', ['윤동희', '신치훈', '김병호']);
+Read.setExam(
   new ExamAttribute(22, 2)
     .addRange('교과서: p114~254')
 );
@@ -21,26 +21,26 @@ Eng.setExam(
     .addRange('6월 학평: 18~45번(서술형 제외)')
 );
 // 수학
-const Mathmatics = new SubjectList('수학', ['박복음', '박선주', '박선주']);
-Mathmatics[1].setExam(
+const Math = new SubjectList('수학', ['박복음', '박선주', '박선주']);
+Math[1].setExam(
   new ExamAttribute(16, 4)
     .addRange('교과서: p86~153')
     .addRange('학습지: 100문제(사인 법칙과 코사인 법칙-수학적 귀납법)')
 );
-Mathmatics[2].setExam(
+Math[2].setExam(
   new ExamAttribute(16, 4)
     .addRange('교과서: p72~p155')
     .addRange('학습지: 100문제(51번 제외)')
 );
 //탐구
-const Physics = new Subject('화학', '이승현');
-Physics.setExam(
+const Chemistry = new Subject('화학', '이승현');
+Chemistry.setExam(
   new ExamAttribute(20, 4)
     .addRange('교과서: p94~210')
     .addRange('완자: 교과서 해당 내용까지')
 );
-const EarthScience = new Subject('생명', '정소영');
-EarthScience.setExam(
+const Biology = new Subject('생명', '정소영');
+Biology.setExam(
   new ExamAttribute(20, 4)
     .addRange('교과서: p80~143')
     .addRange('완자: 교과서 해당 내용까지')
@@ -85,15 +85,15 @@ classTimes.addClassTime(14, 0);
 classTimes.addClassTime(15, 0);
 Setting.setClassTime(classTimes);
 // 정규 시간표
-Setting.group(Lit[1], Eng[2], Mathmatics[1], Creaty, Mathmatics[2], Music, EarthScience)
+Setting.group(Eng[1], Math[2], Math[1], Creaty, Eng[2], Read[2], Biology)
   .setToRegularSchedule(Day.MONDAY);
-Setting.group(Physics, Physics, Mathmatics[3], PE, Human, Lit[2], Eng[1])
+Setting.group(Chemistry, Chemistry, PE, Human, Math[1], Math[2], Art)
   .setToRegularSchedule(Day.THEUSDAY);
-Setting.group(KHistory, Mathmatics[1], Art, Mathmatics[2], Creaty, Creaty, Creaty)
+Setting.group(Read[1], Eng[1], Math[3], Music, Creaty, Creaty, Creaty)
   .setToRegularSchedule(Day.WEDNESDAY);
-Setting.group(Lit[2], Mathmatics[2], EarthScience, EarthScience, Lit[1], Foregin, Eng[3])
+Setting.group(Art, Eng[2], Biology, Biology, Eng[3], Foregin, KHistory)
   .setToRegularSchedule(Day.THURSDAY);
-Setting.group(Eng[1], Lit[3], Eng[2], Creaty, Physics, Mathmatics[1], Music)
+Setting.group(Math[2], Read[2], Math[1], Creaty, Chemistry, Read[1], Read[3])
   .setToRegularSchedule(Day.FIRDAY);
 // 시험 시간표
 Setting.group(Eng, Physics)
