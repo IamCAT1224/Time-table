@@ -2,16 +2,16 @@
 import {
   Subject, SubjectList, ExamAttribute, Setting, Day, loadPage, ClassTimeList
 } from 'https://jaknndiius.github.io/TimeTableAPI/js/timeTableAPI.js';
-// 독서
-const Reading = new SubjectList('독서', ['윤동희', '신치훈', '김병호']);
-Reading.setExam(
+// 문학
+const Lit = new SubjectList('문학', ['윤동희', '신치훈', '김병호']);
+Lit.setExam(
   new ExamAttribute(22, 2)
     .addRange('교과서: p114~254')
 );
 // 인상
 const Human = new Subject('인상', '윤동희');
 // 영어
-const Eng = new SubjectList('영어', ['정화선', '이성훈', '정화선']);
+const Eng = new SubjectList('영어', ['장인석', '이성훈', '장인석']);
 Eng.setExam(
   new ExamAttribute(24,4)
     .addRange('교과서: lesson 4,5, special')
@@ -21,26 +21,26 @@ Eng.setExam(
     .addRange('6월 학평: 18~45번(서술형 제외)')
 );
 // 수학
-const Mathematics = new SubjectList('수학', ['박복음', '박선주', '박선주']);
-Mathematics[1].setExam(
+const Mathmatics = new SubjectList('수학', ['노현태', '박진우', '박진우']);
+Mathmatics[1].setExam(
   new ExamAttribute(16, 4)
     .addRange('교과서: p86~153')
     .addRange('학습지: 100문제(사인 법칙과 코사인 법칙-수학적 귀납법)')
 );
-Mathematics[2].setExam(
+Mathmatics[2].setExam(
   new ExamAttribute(16, 4)
     .addRange('교과서: p72~p155')
     .addRange('학습지: 100문제(51번 제외)')
 );
 //탐구
-const Chemistry = new Subject('화학', '이승현');
-Chemistry.setExam(
+const Physics = new Subject('물리', '황준식');
+Physics.setExam(
   new ExamAttribute(20, 4)
     .addRange('교과서: p94~210')
     .addRange('완자: 교과서 해당 내용까지')
 );
-const Biology = new Subject('생명', '정소영');
-Biology.setExam(
+const EarthScience = new Subject('지학', '정희찬');
+EarthScience.setExam(
   new ExamAttribute(20, 4)
     .addRange('교과서: p80~143')
     .addRange('완자: 교과서 해당 내용까지')
@@ -66,7 +66,7 @@ Foregin.setExam(
     .addRange('학습지: 수행평가 문장 30개')
 );
 // 창체
-const CA = new Subject('창체', '윤동희');
+const Creaty = new Subject('창체', '장인석');
 // 모의고사
 Setting.addMoakTest('2023/03/23');
 Setting.addMoakTest('2023/06/01');
@@ -85,24 +85,24 @@ classTimes.addClassTime(14, 0);
 classTimes.addClassTime(15, 0);
 Setting.setClassTime(classTimes);
 // 정규 시간표
-Setting.group(Eng[1], Mathematics[2], Mathematics[1], CA, Eng[2], Reading[2], Biology)
+Setting.group(Lit[1], Eng[2], Mathmatics[1], Creaty, Mathmatics[2], Music, EarthScience)
   .setToRegularSchedule(Day.MONDAY);
-Setting.group(Chemistry, Chemistry, PE, Human, Mathematics[1], Mathematics[2], Art)
+Setting.group(Physics, Physics, Mathmatics[3], PE, Human, Lit[2], Eng[1])
   .setToRegularSchedule(Day.THEUSDAY);
-Setting.group(Reading[1], Eng[1], Mathematics[3], Music, CA, CA, CA)
+Setting.group(KHistory, Mathmatics[1], Art, Mathmatics[2], Creaty, Creaty, Creaty)
   .setToRegularSchedule(Day.WEDNESDAY);
-Setting.group(Art, Eng[2], Biology, Biology, Eng[3], Foregin, KHistory)
+Setting.group(Lit[2], Mathmatics[2], EarthScience, EarthScience, Lit[1], Foregin, Eng[3])
   .setToRegularSchedule(Day.THURSDAY);
-Setting.group(Mathematics[2], Reading[2], Mathematics[1], CA, Chemistry, Reading[1], Reading[3])
+Setting.group(Eng[1], Lit[3], Eng[2], Creaty, Physics, Mathmatics[1], Music)
   .setToRegularSchedule(Day.FIRDAY);
 // 시험 시간표
-Setting.group(Eng)
+Setting.group(Eng, Physics)
   .setToExamSchedule(7, 3);
-Setting.group(Mathematics[1], KHistory)
+Setting.group(Mathmatics[1], KHistory, EarthScience)
   .setToExamSchedule(7, 4);
-Setting.group(Mathematics[2], Foregin)
+Setting.group(Mathmatics[2], Foregin)
   .setToExamSchedule(7, 5);
-Setting.group(Reading)
+Setting.group(Lit)
   .setToExamSchedule(7, 6);
 
 loadPage();
