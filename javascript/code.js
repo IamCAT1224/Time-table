@@ -85,15 +85,15 @@ classTimes.addClassTime(14, 0);
 classTimes.addClassTime(15, 0);
 Setting.setClassTime(classTimes);
 // 정규 시간표
-Setting.group(Reading[1], Eng[2], Mathematics[1], CA, Mathematics[2], Music, Chemistry)
+Setting.group(Eng[1], Mathematics[2], Mathematics[1], CA, Eng[2], Reading[2], Biology)
   .setToRegularSchedule(Day.MONDAY);
-Setting.group(Biology, Biology, Mathematics[3], PE, Human, Reading[2], Eng[1])
+Setting.group(Chemistry, Chemistry, PE, Human, Mathematics[1], Mathematics[2], Art)
   .setToRegularSchedule(Day.THEUSDAY);
-Setting.group(KHistory, Mathematics[1], Art, Mathematics[2], CA, CA, CA)
+Setting.group(Reading[1], Eng[1], Mathematics[3], Music, CA, CA, CA)
   .setToRegularSchedule(Day.WEDNESDAY);
-Setting.group(Reading[2], Mathematics[2], Chemistry, Chemistry, Reading[1], Foregin, Eng[3])
+Setting.group(Art, Eng[2], Biology, Biology, Eng[3], Foregin, KHistory)
   .setToRegularSchedule(Day.THURSDAY);
-Setting.group(Eng[1], Reading[3], Eng[2], CA, Biology, Mathematics[1], Music)
+Setting.group(Mathematics[2], Reading[2], Mathematics[1], CA, Chemistry, Reading[1], Reading[3])
   .setToRegularSchedule(Day.FIRDAY);
 // 시험 시간표
 Setting.group(Eng, Biology)
