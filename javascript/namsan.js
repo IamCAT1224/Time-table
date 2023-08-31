@@ -100,7 +100,7 @@ Setting.group(Eng)
   .setToExamSchedule(7, 3);
 Setting.group(Mathematics[1], KHistory)
   .setToExamSchedule(7, 4);
-Setting.group(Mathmatics[2], Foregin)
+Setting.group(Mathematics[2], Foregin)
   .setToExamSchedule(7, 5);
 Setting.group(Reading)
   .setToExamSchedule(7, 6);
