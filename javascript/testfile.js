@@ -96,13 +96,13 @@ Setting.group(Art, Eng[2], Biology, Biology, Eng[3], Foregin, KHistory)
 Setting.group(Mathematics[2], Reading[2], Mathematics[1], CA, Chemistry, Reading[1], Reading[3])
   .setToRegularSchedule(Day.FIRDAY);
 // 시험 시간표
-Setting.group(Eng)
+/*Setting.group(Eng)
   .setToExamSchedule(7, 3);
 Setting.group(Mathematics[1], KHistory)
   .setToExamSchedule(7, 4);
 Setting.group(Mathematics[2], Foregin)
   .setToExamSchedule(7, 5);
 Setting.group(Reading)
-  .setToExamSchedule(7, 6);
+  .setToExamSchedule(7, 6);*/
 
 loadPage();
